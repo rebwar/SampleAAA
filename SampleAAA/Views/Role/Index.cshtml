@@ -1,0 +1,31 @@
+﻿@model IEnumerable<IdentityRole>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Role List</h1>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Role Id</th>
+            <th>Role Name</th>
+            <th>Option</th>
+        </tr>
+    </thead>
+    @foreach (IdentityRole identityRole in Model)
+    {
+        <tr>
+            <td>@identityRole.Id    </td>
+            <td>@identityRole.Name</td>
+            <td>
+                <a asp-action="AddUsersToRole"  asp-route-id="@identityRole.Id" class="btn btn-primary">Add Users To Role</a>
+                <a asp-action="RemoveUsersToRole" asp-route-id="@identityRole.Id" class="btn btn-primary">Remove Users From Role</a>
+
+            </td>
+        </tr>
+
+    }
+</table>
+
+<a asp-action="CreateRole" class="btn btn-primary">New Role</a>
+
