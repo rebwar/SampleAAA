@@ -39,7 +39,7 @@ namespace SampleAAA
             })                
                 .AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<PersonDbContext>();
-            services.ConfigureApplicationCookie(c => c.LoginPath = "/Admin/Login");
+            services.ConfigureApplicationCookie(c => c.LoginPath = "/User/Login");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
