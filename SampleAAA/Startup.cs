@@ -29,6 +29,7 @@ namespace SampleAAA
             string Connection = configuration.GetConnectionString("MyCon");
             services.AddDbContext<PersonDbContext>(c => c.UseSqlServer(Connection));
             services.AddScoped<IPersonRepository, PersonRepository>();
+            services.AddScoped<ILogger, Logger>();
             services.AddIdentity<MyUser, IdentityRole>(option=> {
                 option.Password.RequiredLength = 4;
                 option.Password.RequireUppercase = false;

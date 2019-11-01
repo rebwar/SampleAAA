@@ -23,5 +23,6 @@ namespace SampleAAA.Models
 
         }
         public DbSet<Person> People { get; set; }
+        public DbSet<Log> Logs { get; set; }
     }
 }

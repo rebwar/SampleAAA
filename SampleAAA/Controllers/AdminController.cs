@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using SampleAAA.InfraStructures;
 using SampleAAA.Models;
 
 namespace SampleAAA.Controllers
@@ -20,6 +21,7 @@ namespace SampleAAA.Controllers
             this.personRepository = personRepository;
             this.userManager = userManager;
         }
+        [TypeFilter(type:typeof(MyActionFilter))]
         public IActionResult Index()
         {
             return View(userManager.Users);
